@@ -1,0 +1,93 @@
+def juego1():
+    numeros = [8, 15, 7, 20, 11, 9, 14]
+    print("\n===== ¿PAR O IMPAR? =====")
+
+    puntos = 0
+    nivel = 1
+
+    for numero in numeros:
+
+        print("\nNivel", nivel)
+        print("Número:", numero)
+
+        respuesta = input("¿Es Par o Impar?\n"
+                          "Opciones: P = Par | I = Impar: ").upper()
+
+        if numero % 2 == 0:
+            correcta = "P"
+        else:
+            correcta = "I"
+
+        if respuesta == correcta:
+            print("¡Correcto!\n")
+            puntos += 1
+            nivel += 1
+        else:
+            print("\n************")
+            print("  PERDISTE")
+            print("************")
+            print("La respuesta correcta era:", correcta)
+            print("Puntaje:", puntos)
+
+            input("\nPresione Enter para volver al menú...")
+            return
+
+    print("\n¡¡FELICITACIONES!!")
+    print("Completaste todos los niveles.")
+    print("Puntaje final:", puntos)
+
+    input("\nPresione Enter para volver al menú...")
+
+
+def juego2():
+    print("Bienvenido al Juego 2")
+
+
+def juego3():
+    print("Bienvenido al Juego 3")
+
+
+def juego4():
+    print("Bienvenido al Juego 4")
+
+
+def juego5():
+    print("Bienvenido al Juego 5")
+
+
+while True:
+
+    print("========================================\n"
+          "\t\t5 EN 1\n"
+          "========================================\n"
+          "1 - ¿Par o Impar?\n"
+          "2 - Juego 2\n"
+          "3 - Juego 3\n"
+          "4 - Juego 4\n"
+          "5 - Juego 5\n"
+          "0 - Salir\n"
+          "========================================")
+
+    juego = input("Ingresa el número del juego: ")
+
+    if juego == "1":
+        juego1()
+
+    elif juego == "2":
+        juego2()
+
+    elif juego == "3":
+        juego3()
+
+    elif juego == "4":
+        juego4()
+
+    elif juego == "5":
+        juego5()
+
+    elif juego == "0":
+        print("Gracias por jugar 5 EN 1")
+        break
+
+    else:
+        print("ERROR, ingrese un número válido.")
