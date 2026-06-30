@@ -1,0 +1,32 @@
+palabra = "python"
+oculta = "_" * len(palabra)
+intentos = 6
+
+while intentos > 0 and "_" in oculta:
+
+    print("Palabra:", oculta)
+    print("Intentos:", intentos)
+
+    letra = input("Ingresa una letra: ")
+
+    nueva = ""
+
+    for i in range(len(palabra)):
+        if palabra[i] == letra:
+            nueva += letra
+        else:
+            nueva += oculta[i]
+
+    if nueva == oculta:
+        intentos -= 1
+        print("La letra no está.")
+    else:
+        oculta = nueva
+        print("¡Correcto!")
+
+if "_" not in oculta:
+    print("¡Ganaste!")
+    print("La palabra era:", palabra)
+else:
+    print("\nPerdiste.")
+    print("La palabra era:", palabra)
