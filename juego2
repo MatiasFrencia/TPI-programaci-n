@@ -1,4 +1,49 @@
-def nivel_1():
+def juego1():
+    numeros = [8, 15, 7, 20, 11, 9, 14]
+    print("\n===== ¿PAR O IMPAR? =====")
+
+    puntos = 0
+    nivel = 1
+
+    for numero in numeros:
+
+        print("\nNivel", nivel)
+        print("Número:", numero)
+
+        respuesta = input("¿Es Par o Impar?\n"
+                          "Opciones: P = Par | I = Impar: ").upper()
+
+        if numero % 2 == 0:
+            correcta = "P"
+        else:
+            correcta = "I"
+
+        if respuesta == correcta:
+            print("¡Correcto!\n")
+            puntos += 1
+            nivel += 1
+        else:
+            print("\n************")
+            print("  PERDISTE")
+            print("************")
+            print("La respuesta correcta era:", correcta)
+            print("Puntaje:", puntos)
+
+            input("\nPresione Enter para volver al menú...")
+            return
+
+    print("\n¡¡FELICITACIONES!!")
+    print("Completaste todos los niveles.")
+    print("Puntaje final:", puntos)
+
+    input("\nPresione Enter para volver al menú...")
+
+
+def juego2():
+
+  def nivel_1():
+   while True:
+
     print("=== NIVEL 1 ===")
     correctas = 0
     respuesta = input ("cuanto es 10 + 25:")
@@ -25,13 +70,16 @@ def nivel_1():
 
     if correctas >= 2:
         print ("Pasaste de nivel!!")
-        nivel_2()
+        nivel_2() 
+        break
     else:
         print ("no pasaste de nivel- intentalo de nuevo")
-        nivel_1()
+        
 
 
-def nivel_2():
+ def nivel_2():
+  while True:
+
     print ("=== NIVEL 2 ===")
     correctas = 0
     respuesta = input ("cuanto es 30 - 18")
@@ -57,12 +105,14 @@ def nivel_2():
     if correctas >= 2:
         print ("Pasaste de nivel!!")
         nivel_3()
+        break
     else:
         print ("no pasaste de nivel - intentalo de nuevo ")
-        nivel_2()
+        
 
 
-def nivel_3():
+ def nivel_3():
+
     print ("=== NIVEL 3 ===")
     correctas = 0
     respuesta = input ("cuanto es 4 * 5:")
@@ -105,3 +155,53 @@ if opcion == "1":
     nivel_1()
 else:
     print ("Hasta Luego!!")
+
+
+def juego3():
+    print("Juego 3")
+
+
+def juego4():
+    print("Juego 4")
+
+
+def juego5():
+    print("Juego 5")
+
+
+while True:
+
+    print("========================================\n"
+          "\t\t5 EN 1\n"
+          "========================================\n"
+          "1 - ¿Par o Impar?\n"
+          "2 - Sumas y Restas\n"
+          "3 - Juego 3\n"
+          "4 - Juego 4\n"
+          "5 - Juego 5\n"
+          "0 - Salir\n"
+          "========================================")
+
+    juego = input("Ingresa el número del juego: ")
+
+    if juego == "1":
+        juego1()
+
+    elif juego == "2":
+        juego2()
+
+    elif juego == "3":
+        juego3()
+
+    elif juego == "4":
+        juego4()
+
+    elif juego == "5":
+        juego5()
+
+    elif juego == "0":
+        print("Gracias por jugar 5 EN 1")
+        break
+
+    else:
+        print("ERROR, ingrese un número válido.")
